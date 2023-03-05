@@ -1,0 +1,115 @@
+### ADD DATA
+POST http://localhost:5000/user/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "muzzammil@gmail.com",
+    "password": "123459"
+}
+
+### GET DATA
+GET http://localhost:5000/users HTTP/1.1
+
+### GET USER
+GET http://localhost:5000/getUser/muzzammil@gmail.com/123459 HTTP/1.1
+
+
+### UPDATE DATA
+PUT http://localhost:5000/modify HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "6307552335888717e657129d",   
+    "email": "hellosanzar@gmail.com"
+}
+
+### DELETE USER DATA
+DELETE http://localhost:5000/63231c2a574d462249949ca2 HTTP/1.1
+
+### board ADD
+POST http://localhost:5000/boards/add HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY2MzIyMTg4OH0.pFINX6pk9YSL7zItMEHkAcbUebvxrVNwz7Ugbw2lpGA
+
+{
+    "title": "new one"
+}
+
+### tasks ADD 
+POST http://localhost:5000/boards/tasks/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "6316f5f72d59400d97fda0dd",
+    "title": "complete rest api"
+}
+
+### task description ADD
+PUT http://localhost:5000/boards/des/add HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY2MzIyMTg4OH0.pFINX6pk9YSL7zItMEHkAcbUebvxrVNwz7Ugbw2lpGA
+
+{
+    "id": "6316f9000535fde7ea7ed5fc",
+    "title": "paint wall",
+    "description": "description"
+}
+
+### TASKS TITLE EDIT
+PUT http://localhost:5000/boards/title/edit HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY2MzIyMTg4OH0.pFINX6pk9YSL7zItMEHkAcbUebvxrVNwz7Ugbw2lpGA
+
+{
+    "id": "6316f9000535fde7ea7ed5fc",
+    "title": "paint wall",
+    "newTitle": "wall paint"
+}
+
+### UPDATE BOARDS TASKS
+PUT http://localhost:5000/boards/tasks/update/6321fe7dd622cb64b4454f3b HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY2MzIyMTg4OH0.pFINX6pk9YSL7zItMEHkAcbUebvxrVNwz7Ugbw2lpGA
+
+[
+    {"title": "paint car", "description": "paint it red"},
+    {"title": "paint room", "description": "paint it yellow"},
+    {"title": "paint table", "description": "paint it gray"}
+]
+
+### GET ALL DATA
+GET http://localhost:5000/boards HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY2MzIyMTg4OH0.pFINX6pk9YSL7zItMEHkAcbUebvxrVNwz7Ugbw2lpGA
+
+### GET TASKS
+GET http://localhost:5000/tasks/6316f9000535fde7ea7ed5fc HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY2MzIyMTg4OH0.pFINX6pk9YSL7zItMEHkAcbUebvxrVNwz7Ugbw2lpGA
+
+### GET TOKEN
+GET http://localhost:5000/token HTTP/1.1
+
+### tasks title delete
+PUT http://localhost:5000/boards/title/delete HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY2MzIyMTg4OH0.pFINX6pk9YSL7zItMEHkAcbUebvxrVNwz7Ugbw2lpGA
+
+{
+    "id": "6316f5f72d59400d97fda0dd",
+    "title": "another one"
+}
+
+
+### tasks EDIT
+PUT http://localhost:5000/tasks/edit HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY2MzIyMTg4OH0.pFINX6pk9YSL7zItMEHkAcbUebvxrVNwz7Ugbw2lpGA
+
+{
+    "id": "6316e2218f765edc5a8e70b4",
+    "title": "things to do",
+    "description": "things to do description"
+}
+
+### BOARDS DELETE
+DELETE http://localhost:5000/boards/63200ea91471bb5f4981883d HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY2MzIyMTg4OH0.pFINX6pk9YSL7zItMEHkAcbUebvxrVNwz7Ugbw2lpGA
